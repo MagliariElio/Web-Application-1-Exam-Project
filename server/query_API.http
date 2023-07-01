@@ -1,0 +1,215 @@
+
+
+## This was only used for testing purposes, NO MORE UPDATED
+
+
+## Adding a new page
+POST http://localhost:3001/api/pages HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Guide to New York restaurants",
+    "release_date": "20-06-2023",
+    "creation_date": "15-06-2023",
+    "deleted": 0,
+    "user": {
+        "id": 1,
+        "email": "elio@studenti.polito.it",
+        "hash": "password_1",
+        "salt": "",
+        "username": "oile",
+        "name": "Elio",
+        "surname": "Magliari",
+        "role": 0
+    }
+}
+###
+
+## Adding a new page
+POST http://localhost:3001/api/pages HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Best Summer Vacation Destinations",
+    "release_date": "30-06-2023",
+    "creation_date": "10-06-2023",
+    "deleted": 0,
+    "user": {
+        "id": 1,
+        "email": "elio@studenti.polito.it",
+        "hash": "password_1",
+        "salt": "",
+        "username": "oile",
+        "name": "Elio",
+        "surname": "Magliari",
+        "role": 0
+    }
+}
+###
+
+## Requesting a page with id equal to 1
+GET http://localhost:3001/api/pages/1 HTTP/1.1
+###
+
+## Requesting all pages
+GET http://localhost:3001/api/pages HTTP/1.1
+###
+
+## Editing an existing page
+PUT http://localhost:3001/api/pages/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Welcome to my website",
+    "release_date": "20-06-2023",
+    "creation_date": "15-06-2023",
+    "deleted": 0,
+    "user": {
+        "id": 1,
+        "email": "elio@studenti.polito.it",
+        "hash": "password_1",
+        "salt": "",
+        "username": "oile",
+        "name": "Elio",
+        "surname": "Magliari",
+        "role": 0
+    },
+    "contents": [
+        {
+            "header": "About me",
+            "paragraph": "My name is John Smith and I'm a web developer based in New York City. I have over 5 years of experience in building websites and web applications.", 
+            "sort_number": 0
+        }
+]
+}
+###
+
+## Editing an existing page
+PUT http://localhost:3001/api/pages/2 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "My favorite recipes",
+    "release_date": "30-06-2023",
+    "creation_date": "10-06-2023",
+    "deleted": 0,
+    "user": {
+        "id": 1,
+        "email": "elio@studenti.polito.it",
+        "hash": "password_1",
+        "salt": "",
+        "username": "oile",
+        "name": "Elio",
+        "surname": "Magliari",
+        "role": 0
+    },
+    "contents": [
+        {
+            "header": "Pesto pasta",
+            "paragraph": "Ingredients: pasta, basil, pine nuts, garlic, olive oil, parmesan cheese. Instructions: ...", 
+            "sort_number": 0
+        }
+    ]
+}
+###
+
+## Deleting the page with the id specified
+DELETE http://localhost:3001/api/pages/1 HTTP/1.1
+###
+
+## Adding a new content in a page with id specified
+POST http://localhost:3001/api/pages/1/contents HTTP/1.1
+content-type: application/json
+
+{
+"contents": [
+    {
+        "header": "About me",
+        "image_id": 1,
+        "sort_number": 0
+    },
+    {
+        "header": "About me",
+        "paragraph": "In my free time, I enjoy hiking and exploring the outdoors.",
+        "sort_number": 1
+    }
+]
+}
+###
+
+
+
+
+
+
+
+
+
+
+
+
+## Auth an user
+POST http://localhost:3001/api/session HTTP/1.1
+content-type: application/json
+
+{
+    "email": "elio@studenti.polito.it",
+    "hash": "password_1"
+}
+###
+
+
+
+
+
+
+
+
+
+## Adding a new user
+POST http://localhost:3001/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "email": "elio@studenti.polito.it",
+    "hash": "password_1",
+    "salt": "",
+    "username": "oile",
+    "name": "Elio",
+    "surname": "Magliari",
+    "role": 0
+}
+###
+
+## Adding a new user
+POST http://localhost:3001/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "id": 2,
+    "email": "amir@studenti.polito.it",
+    "hash": "password_2",
+    "salt": "",
+    "username": "utente89",
+    "name": "Amir",
+    "surname": "Magliari",
+    "role": 0
+}
+###
+
+## Adding a new user
+POST http://localhost:3001/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "id": 3,
+    "email": "anuar@studenti.polito.it",
+    "hash": "password_3",
+    "salt": "",
+    "username": "the_admin",
+    "name": "Anuar",
+    "surname": "Magliari",
+    "role": 1
+}
+###
